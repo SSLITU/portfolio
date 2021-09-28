@@ -21,7 +21,7 @@ export default {
       name: 'author',
       title: 'Author',
       type: 'reference',
-      to: {type: 'author'},
+      to: { type: 'author' },
     },
     {
       name: 'mainImage',
@@ -32,20 +32,40 @@ export default {
       },
     },
     {
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
+      name: 'description',
+      type: 'text',
     },
-    {
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
-    },
+    // {
+    //   name: 'categories',
+    //   title: 'Categories',
+    //   type: 'array',
+    //   of: [{ type: 'reference', to: { type: 'category' } }],
+    // },
+    // {
+    //   name: 'publishedAt',
+    //   title: 'Published at',
+    //   type: 'datetime',
+    // },
     {
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+    },
+    {
+      name: "link",
+      type: "url",
+    },
+    {
+      name: "tags",
+      type: "array",
+      of: [
+        {
+          type: "string",
+        },
+      ],
+      options: {
+        layout: "tags"
+      }
     },
   ],
 
@@ -56,7 +76,7 @@ export default {
       media: 'mainImage',
     },
     prepare(selection) {
-      const {author} = selection
+      const { author } = selection
       return Object.assign({}, selection, {
         subtitle: author && `by ${author}`,
       })

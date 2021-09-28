@@ -1,13 +1,17 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+/* Due to cascade, we will add component classes here 
+by using the tailwind apply method*/
+/* .btn {
+    @apply inline-block;
+} */
+
+.block-container h2 {
+    padding-top:1.25rem;
+    padding-bottom:1.25rem;
+    font-size:medium;
+    font-weight:500;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@tailwind utilities;
+
