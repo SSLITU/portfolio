@@ -111,6 +111,7 @@ const SingleProject: React.FC = () => {
                             </h3>
                         </div>
                         }
+                        </div>
 
                         <div className="block-container flex justify-center text-center lg:justify-end md:pt-0 pt-6">
                             <BlockContent
@@ -119,7 +120,6 @@ const SingleProject: React.FC = () => {
                                 dataset="production"
                             />
                         </div>
-                    </div>
                 </div>
             </article>
         </main>
