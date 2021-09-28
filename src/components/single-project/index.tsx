@@ -75,6 +75,7 @@ const SingleProject: React.FC = () => {
         }
         `).then((data) => setSinglePost(data[0]))
             .catch(console.error);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     if (!singlePost) return <div>Loading...</div>
@@ -92,13 +93,13 @@ const SingleProject: React.FC = () => {
                             <h2 className="text-4xl text-gray-900 font-bold mx-auto pr-14 pt-5 tracking-wide"> {singlePost.title}</h2>
                         </div>
                         <div className="mr-1">
-                        {singlePost.tags.map((tag) => {
-                            return (
-                                <div className="bg-gray-800 m-1 relative inline-block rounded-md">
-                                    <h2 className="p-2 text-xs font-bold text-white"> {tag} </h2>
-                                </div>
-                            )
-                        })}
+                            {singlePost.tags.map((tag) => {
+                                return (
+                                    <div key={tag} className="bg-gray-800 m-1 relative inline-block rounded-md">
+                                        <h2 className="p-2 text-xs font-bold text-white"> {tag} </h2>
+                                    </div>
+                                )
+                            })}
                         </div>
                         <h2 className="text-l font-normal text-gray-900 italic leading-normal pt-6 mr-8 lg:text-xl">{singlePost.description}</h2>
                         {singlePost.link && <div className="mt-4">
@@ -110,16 +111,15 @@ const SingleProject: React.FC = () => {
                             </h3>
                         </div>
                         }
-                        
-                    </div>
-                    <div className="block-container flex justify-center text-center lg:justify-end md:pt-0 pt-6">
-                        <BlockContent
-                            blocks={singlePost.body}
-                            projectId="qtwktgh2"
-                            dataset="production"
-                        />
-                    </div>
 
+                        <div className="block-container flex justify-center text-center lg:justify-end md:pt-0 pt-6">
+                            <BlockContent
+                                blocks={singlePost.body}
+                                projectId="qtwktgh2"
+                                dataset="production"
+                            />
+                        </div>
+                    </div>
                 </div>
             </article>
         </main>

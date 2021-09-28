@@ -15,7 +15,7 @@ const Home: React.FC = () => {
             <div className="container absolute grid grid-cols-3 min-w-full h-screen">
                 <div className="relative"></div>
                 <div className="col-span-2 h-full">
-                <img src={profilePicture} alt="profile-picture" className="scale-75 transform ml-10"/>
+                <img src={profilePicture} alt="profile" className="scale-75 transform ml-10"/>
                 
                 </div>
             </div>

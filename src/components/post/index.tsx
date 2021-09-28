@@ -57,7 +57,7 @@ const Post: React.FC = () => {
                                 <span className="block h-72 relative rounded leading-snug bg-gray-100" key={index}>
                                     <img
                                         src={post.mainImage.asset.url}
-                                        alt={post.mainImage.alt}
+                                        alt="profile-round"
                                         // Trying to set some transition on the image on hover. Add active? what should it do?
                                         className="w-full h-full rounded object-cover absolute hover:-translate-y-4 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-blue-400 focus:ring-opacity-50 transform transition"
                                     />

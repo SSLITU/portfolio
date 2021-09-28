@@ -1,18 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import sanityClient from '../../client';
-import imageUrlBuilder from '@sanity/image-url';
 import BlockContent from '@sanity/block-content-to-react';
 import { Link } from 'react-router-dom';
 import mainLogo from '../../assets/LOGO.png';
 import Image2 from '../../assets/sebastian-casual2.jpg';
 import cvDk from '../../assets/CV_Danish.pdf';
 import cvEng from '../../assets/CV_English.pdf';
-
-const builder = imageUrlBuilder(sanityClient);
-function urlFor(source: any) {
-    return builder.image(source)
-}
 
 interface AuthorData {
     authorImage: string;
@@ -102,26 +96,10 @@ const About: React.FC = () => {
                         </h2>
                     </div>
                     <div className="mr-4 mt-28">
-
-                        {/* <img src={urlFor(author.authorImage).url()} className="rounded mr-8" alt={author.name} /> */}
-                        <img src={Image2} className="rounded mr-8" alt={author.name} />
+                        <img src={Image2} alt="profile" className="rounded mr-8" />
                     </div>
                 </div>
-                {/* <div className="p-10 lg:pt-48 container max-auto relative" >
-                    <div className="text-lg flex flex-col justify-center">
-                        <h1 className="text-6xl text-blue-400 mb-4">
-                            Hey There. I'm{""}
-                            <span className="text-blue-200">{author.name}</span>
-                        </h1>
-                        <div className="text-white">
-                            <BlockContent
-                                blocks={author.bio}
-                                projectId="qtwktgh2"
-                                dataset="production"
-                            />
-                        </div>
-                    </div>
-                </div> */}
+                
             </section>
         </main>
     );

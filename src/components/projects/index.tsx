@@ -15,7 +15,7 @@ interface ProjectData {
 }
 
 const Projects: React.FC = () => {
-    const [projectData, setProjectData] = useState([]);
+    const [projectData, setProjectData] = useState<ProjectData | null>(null);
 
     useEffect(() => {
         sanityClient.fetch(`*[_type == "project"]{
@@ -35,6 +35,7 @@ const Projects: React.FC = () => {
             <section className="container mx-auto">
                 <Link to={"/"} key="home" >
                     <img src={mainLogo} alt="logo" className="shadow-l scale-75 transform ease-in-out mx-auto" ></img>
+                    {projectData && console.log(projectData.title)}
                 </Link>
                 <h2 className="items-center flex text-2xl justify-center mt-2"> Under Construction </h2>
                 {/* <img src={mainLogo} alt="logo" className="shadow-l scale-75 transform mt-1 mx-auto" ></img>
