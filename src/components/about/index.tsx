@@ -7,6 +7,7 @@ import mainLogo from '../../assets/LOGO.png';
 import Image2 from '../../assets/sebastian-casual2.jpg';
 import cvDk from '../../assets/CV_Danish.pdf';
 import cvEng from '../../assets/CV_English.pdf';
+import grades from '../../assets/Masters_Grades.pdf';
 
 interface AuthorData {
     authorImage: string;
@@ -49,31 +50,40 @@ const About: React.FC = () => {
                         <img src={mainLogo} alt="logo" className="shadow-l scale-75 transform mx-auto mt-2" ></img>
                     </Link>
 
-                    <ul className="list-none mt-6 ml-12">
-                        <li className="mt-2 mr-2 text-sm text-grey-900 font-bold">Phone: +45 4221 1006</li>
-                        <li className="mt-2 mr-2 text-sm text-grey-900 font-bold">sebastiansoegaardlarsen@gmail.com</li>
-                        <li className="mt-2 mr-2 text-sm text-grey-900 font-bold">Jenagade 11, 2tv, 2300 København</li>
-                        <li className="mt-2 mr-2 text-sm text-grey-900 font-bold">18.06.1992</li>
+                    <h2 className="text-3xl font-light text-gray-800 flex justify-center pt-5 mb-4">Contact</h2>
+
+                    <ul className="list-none mt-10 ml-12 lg:ml-24">
+
+                        <li className="mt-2 mr-2 text-sm text-gray-800">Phone: +45 4221 1006</li>
+                        <li className="mt-2 mr-2 text-sm text-gray-800 break-words" >sebastiansoegaardlarsen@gmail.com</li>
+                        <li className="mt-2 mr-2 text-sm text-gray-800">Jenagade 11, 2tv, 2300 København</li>
                     </ul>
 
 
-                    <div className="mt-12 flex-col">
-                        <h2 className="mt-16 lg:text-xl text-base flex justify-center"> Download My Resume! </h2>
-                        
-                        <h2 className="m-10 text-3xl flex justify-center"> 👇 </h2>
+                    <div className="flex-col">
+                        <h2 className="mt-10 font-light text-3xl text-gray-800 flex justify-center"> Downloads </h2>
+
+                        <h2 className="m-10 text-2xl flex justify-center">
+                            👇
+                        </h2>
 
                     </div>
 
-                    <div className="mt-4 block">
-                        <ul className="">
-                            <li className="flex justify-center mb-4">
-                                <a href={cvEng} download="Sebastian_Resume_ENG" className="text-red-700 opacity-90 lg:text-2xl text-lg hover:text-red-500" id="link" >
-                                    English Resume
+                    <div className="block">
+                        <ul className="ml-12 lg:ml-24">
+                            <li className="flex justify-start m-4">
+                                <a href={cvEng} download="Sebastian_Resume_ENG" className="text-gray-800 lg:text-xl text-lg hover:text-red-500" id="link" >
+                                    English_Resume
                                 </a>
                             </li>
-                            <li className="flex justify-center">
-                                <a href={cvDk} download="Sebastian_Resume_DK" className="text-red-700 opacity-90 lg:text-2xl text-lg hover:text-red-500" id="link">
-                                    Danish Resume
+                            <li className="flex justify-start m-4">
+                                <a href={cvDk} download="Sebastian_Resume_DK" className="text-gray-800 lg:text-xl text-lg hover:text-red-500" id="link">
+                                    Danish_Resume
+                                </a>
+                            </li>
+                            <li className="flex justify-start m-4">
+                                <a href={grades} download="Sebastian_Resume_DK" className="text-gray-800 lg:text-xl text-lg hover:text-red-500" id="link">
+                                    Master_Grades
                                 </a>
                             </li>
                         </ul>
@@ -84,7 +94,7 @@ const About: React.FC = () => {
                     <div>
                     </div>
                     <div className="ml-10 mr-8 mt-20">
-                        <h2 className="text-3xl text-red-700 opacity-90 flex justify-start pt-10 mb-4">About Me</h2>
+                        <h2 className="text-3xl font-extralight text-red-700 opacity-90 flex justify-start pt-10 mb-4">About Me</h2>
                         <h2 className="font-serif text-sm text-gray-500 lg:text-base leading-relaxed tracking-wide font-thin pr-2" >
                             <BlockContent
                                 blocks={author.bio}
@@ -99,7 +109,7 @@ const About: React.FC = () => {
                         <img src={Image2} alt="profile" className="rounded mr-8" />
                     </div>
                 </div>
-                
+
             </section>
         </main>
     );
